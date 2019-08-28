@@ -1,0 +1,61 @@
+1. First way :--
+
+package com.programming.fibonacci;
+
+import java.util.Scanner;
+
+public class FibonacciSeries {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the number");
+		int num = scan.nextInt();
+		fibonacci(num);
+		scan.close();
+	}
+
+	private static void fibonacci(int num) {
+		int f1 = 0, f2 = 1, f3;
+		while (num > 0) {
+			System.out.print(f1 + " ");
+			f3 = f1 + f2;
+			f1 = f2;
+			f2 = f3;
+			num--;
+		}
+
+	}
+
+}
+=========================================================================================================================================
+2nd way
+To check wheather the number is Fibonacci number or not
+
+package com.programming.fibonacci;
+
+import java.util.Scanner;
+
+public class FibonacciSeries {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the number");
+		int num = scan.nextInt();
+		boolean fib = fibonacci(num);
+		System.out.println(fib);
+		scan.close();
+	}
+
+	private static boolean fibonacci(int num) {
+		int f1 = 0, f2 = 1, f3;
+		while (f1 <= num) {
+			if (f1 == num)
+				return true;
+			f3 = f1 + f2;
+			f1 = f2;
+			f2 = f3;
+		}
+		return false;
+	}
+
+}
