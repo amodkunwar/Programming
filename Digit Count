@@ -1,0 +1,26 @@
+package com.programming.digitCount;
+
+import java.util.Scanner;
+
+public class DigitCount {
+
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter the Number");
+		int num = scanner.nextInt();
+		int digitCount = digitCount(num);
+		System.out.println(digitCount);
+
+	}
+
+	private static int digitCount(int num) {
+		int digitCount = 0;
+		while (num != 0) {
+			digitCount++;
+			num = num / 10;
+		}
+		return digitCount;
+	}
+
+}
