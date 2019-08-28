@@ -1,0 +1,28 @@
+package com.programming.power;
+
+import java.util.Scanner;
+
+public class FindPower {
+
+	public static void main(String[] args) {
+
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the Number");
+		int num = scan.nextInt();
+		System.out.println("Enter the power");
+		int pow = scan.nextInt();
+		int power = findPower(num, pow);
+		System.out.println("Power is " + power);
+
+	}
+
+	private static int findPower(int num, int pow) {
+		int pw = 1;
+		while(pow != 0) {
+			pw = pw*num;
+			pow--;
+		}
+		return pw;
+	}
+
+}
