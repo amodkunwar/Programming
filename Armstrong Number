@@ -1,0 +1,49 @@
+package com.programming.armstrong;
+
+import java.util.Scanner;
+
+public class ArmstrongNumber {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the number to check wheather the number is Armstrong or not ?");
+		int num = scan.nextInt();
+		boolean isArmstrong = isArmstrong(num);
+		if (isArmstrong) {
+			System.out.println(num + " is Armstrong Number");
+		} else {
+			System.out.println(num + " is not Armstrong Number");
+		}
+	}
+
+	private static boolean isArmstrong(int num) {
+		int sum = 0;
+		int temp = num;
+		int totalDigitCount = totalDigitCount(num);
+		while (num != 0) {
+			int rem = num % 10;
+			sum = sum + findPower(rem, totalDigitCount);
+			num = num / 10;
+		}
+		return sum == temp;
+	}
+
+	public static int totalDigitCount(int num) {
+		int digitCount = 0;
+		while (num != 0) {
+			digitCount++;
+			num = num / 10;
+		}
+		return digitCount;
+	}
+
+	public static int findPower(int num, int totalDigitCount) {
+		int pw = 1;
+		while (totalDigitCount != 0) {
+			pw = pw * num;
+			totalDigitCount--;
+		}
+		return pw;
+	}
+
+}
