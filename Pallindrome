@@ -1,0 +1,29 @@
+package com.programming.palindrome;
+
+import java.util.Scanner;
+
+public class PalindromeNumber {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the number");
+		int num = scan.nextInt();
+		boolean b = isPallindrome(num);
+		if (b) {
+			System.out.println(num + " is Pallindrome");
+		} else {
+			System.out.println(num + " is not a pallindrome");
+		}
+		scan.close();
+	}
+
+	private static boolean isPallindrome(int num) {
+		int sum = 0;
+		int temp = num;
+		while (num > 0) {
+			int r = num % 10;
+			sum = (sum * 10) + r;
+			num = num / 10;
+		}
+		return temp == sum;
+	}
+}
