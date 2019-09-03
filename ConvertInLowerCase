@@ -1,0 +1,27 @@
+package com.demo;
+
+import java.util.Scanner;
+
+public class ConvertInLowerCase {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter the String");
+		String str = scanner.nextLine();
+		String lowerStr = convertIntoLowerCase(str);
+		System.out.println(lowerStr);
+		scanner.close();
+	}
+
+	private static String convertIntoLowerCase(String str) {
+		char[] ch = str.toCharArray();
+		for (int i = 0; i < ch.length; i++) {
+			if (ch[i] >= 65 && ch[i] <= 90) {
+				ch[i] = (char) (ch[i] + 32);
+			}
+		}
+		String st = new String(ch);
+		return st;
+	}
+
+}
