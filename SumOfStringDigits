@@ -1,0 +1,25 @@
+package com.demo;
+
+import java.util.Scanner;
+
+public class SumOfStringDigits {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the String");
+		String str = scan.next();
+		int sumOfStringDigits = sumOfStringDigits(str);
+		System.out.println(sumOfStringDigits);
+		scan.close();
+	}
+
+	private static int sumOfStringDigits(String str) {
+		char[] ch = str.toCharArray();
+		int sum = 0;
+		for (int i = 0; i < ch.length; i++) {
+			if (ch[i] >= '0' && ch[i] <= '9') {
+				sum = sum + (ch[i] - 48);
+			}
+		}
+		return sum;
+	}
+}
