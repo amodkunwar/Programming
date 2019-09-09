@@ -25,6 +25,6 @@ public class InitCapExample {
 				}
 			}
 		}
-		return new String(ch);
+		return new String(ch); 
 	}
 }
