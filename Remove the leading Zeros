@@ -1,0 +1,65 @@
+// remove the leading zeros from String
+
+package com.demo.string;
+
+ 
+
+import java.util.Scanner;
+
+ 
+
+public class RemoveZero {
+
+     public static void main(String[] args) {
+
+           Scanner scan = new Scanner(System.in);
+
+           System.out.println("Enter the value");
+
+           String s = scan.next();
+
+           int parseInt = Integer.parseInt(s);
+
+           if (parseInt < 10 || parseInt > 200) {
+
+                System.out.println("The value should be greater than 10 and less than 200");
+
+           } else if (parseInt >= 10 && parseInt <= 200) {
+
+                System.out.println(parseInt);
+
+           } else {
+
+                String str = removeStr(s);
+
+                System.out.println(str);
+
+           }
+
+           scan.close();
+
+     }
+
+ 
+
+     private static String removeStr(String str) {
+
+           int i = 0;
+
+           StringBuffer stringBuffer = new StringBuffer();
+
+           while (i < str.length() && str.charAt(i) == '0') {
+
+                i++;
+
+                stringBuffer.replace(0, i, "");
+
+           }
+
+           return stringBuffer.toString();
+
+     }
+
+}
+
+ 
