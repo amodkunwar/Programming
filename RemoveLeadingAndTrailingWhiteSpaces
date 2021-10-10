@@ -1,0 +1,17 @@
+package com.amod.test;
+
+import java.util.Scanner;
+
+public class RemoveWhiteSpace {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter String");
+		String str = scan.nextLine();
+		System.out.println(removeWhiteSpace(str.trim()));
+		scan.close();
+	}
+
+	private static String removeWhiteSpace(String str) {
+		return str.replaceAll("\\s", "");
+	}
+}
