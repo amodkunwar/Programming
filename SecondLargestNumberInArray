@@ -1,0 +1,56 @@
+package com.amod.test;
+
+public class SecondLargestNumber {
+	public static void main(String[] args) {
+		int[] arr = { 1, 2, 45, 65, 65, 45 };
+		sortArray(arr);
+		arr = removeDupliates(arr);
+		int largest = findSecondLargest(arr);
+		System.out.println("Second Largest = " + largest);
+		for (int i : arr) {
+			System.out.println(i);
+		}
+	}
+
+	private static int findSecondLargest(int[] arr) {
+		int largest = 0;
+		int secondLargest = 0;
+		for (int i = 0; i < arr.length - 1; i++) {
+			if (arr[i] > largest) {
+				largest = arr[i];
+			}
+		}
+		for (int i = 0; i < arr.length - 1; i++) {
+			if (arr[i] > secondLargest && arr[i] < largest) {
+				secondLargest = arr[i];
+			}
+		}
+		return secondLargest;
+	}
+
+	private static int[] removeDupliates(int[] arr) {
+
+		int[] temp = new int[arr.length];
+		int j = 0;
+		for (int i = 0; i < arr.length - 1; i++) {
+			if (arr[i] != arr[i + 1]) {
+				temp[j++] = arr[i];
+			}
+			temp[j] = arr[arr.length - 1];
+		}
+		return temp;
+	}
+
+	public static int[] sortArray(int[] arr) {
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr.length; j++) {
+				if (arr[i] < arr[j]) {
+					int large = arr[i];
+					arr[i] = arr[j];
+					arr[j] = large;
+				}
+			}
+		}
+		return arr;
+	}
+}
